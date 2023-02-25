@@ -1,37 +1,27 @@
-int returnIntWithoutParameter() {
-  int result = 20+1;
+String iAmStringFunction(String inputString) {
+  String result = "atorigin : " + inputString;
   return result;
 }
 
-double returnDoubleWithParameter(double inputDouble) {
-  double result = inputDouble * 100 / 20;
+int iAmIntFunction(int inputInt) {
+  int result = inputInt * 20;
   return result;
 }
 
-String returnStringWithParameter(String inputStr) {
-  String result = inputStr + "是一個字串";
-  return result;
-}
-
-void withoutReturnJustExecute() {
-  print("沒有回傳資料的函數，用 void 宣告此方法的回傳值型別");
+void iAmNotReturnValue(){
+  print("通常會用於與資料庫、硬碟等外部系統接觸的情境");
 }
 
 void main(List<String> args) {
-  print("====沒有參數的函數，取值====");
-  int getIntFromFunction = returnIntWithoutParameter();
-  print(getIntFromFunction);
+  print("展示 iAmStringFunction");
+  String getValueFromiAmStringFunction = iAmStringFunction("練習寫 code!");
+  print(getValueFromiAmStringFunction);
 
-  print("====在函數動態輸入數字，取值====");
-  double getDoubleFromFunctionWithParam1 = returnDoubleWithParameter(2);
-  double getDoubleFromFunctionWithParam2 = returnDoubleWithParameter(5);
-  print(getDoubleFromFunctionWithParam1);
-  print(getDoubleFromFunctionWithParam2);
+  print("展示 iAmIntFunction");
+  int getValueFromiAmIntFunction = iAmIntFunction(300);
+  print(getValueFromiAmIntFunction);
 
-  print("====在函數動態輸入文字，取值====");
-  String getStringFromFunction = returnStringWithParameter("atorigin");
-  print(getStringFromFunction);
-
-  print("====不需接收回傳值，調度函數====");
-  withoutReturnJustExecute();
+  print("展示 iAmNotReturnValue");
+  iAmNotReturnValue();
 }
+
