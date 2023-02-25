@@ -10,5 +10,5 @@ Q5 : 有一個東西，他有兩個特徵，名字是大話 AWS 雲端架構、�
 
 ## chapter02-2 homework
 Q1 : 定義一個會回傳字串的方法，函數名為 iAmStringFunction，並帶有字串型別的函數參數 iAmString, 之後回傳字串為 HelloWorld+該參數的內容   
-Q2 : 定義一個會回傳數字的方法，函數名為 iAmIntFunction，並帶有字串型別的函數參數 iAmInt, 之後回傳數字為 該參數*20
-Q3 : 定義一個不回傳內容的方法，函數名為 iWillNotReturnValue，在裡面設置 print("通常會用於 與資料庫、硬碟等外部系統接觸的情境")
+Q2 : 定義一個會回傳數字的方法，函數名為 iAmIntFunction，並帶有字串型別的函數參數 iAmInt, 之後回傳數字為 該參數*20   
+Q3 : 定義一個不回傳內容的方法，函數名為 iWillNotReturnValue，在裡面設置 print("通常會用於 與資料庫、硬碟等外部系統接觸的情境")   
