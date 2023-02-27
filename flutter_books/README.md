@@ -52,3 +52,14 @@ Q2 : 接續上一題，家庭後來有了女兒daughter，女兒叫作李小花�
 Q1 : 宣告一個Map，鍵值型態分別為String,dynamic有一個鍵叫做 questionId，內容為整數有一個鍵叫做 questionContent，內容為字串   
 Q2 : 將先前建置的 Map 轉換成 json object 格式的字串   
 Q3 : 有一個符合 json object 格式的字串，請嘗試轉換成`Map<String, dynamic>`的資料結構，並成功提取 itemId 欄位   
+```
+{
+    "itemId": 303031   
+    "itemName": "白米飯",   
+    "itemPrice": 300  
+}
+```
+Q4 : 有一個複雜巢狀 json string，嘗試解析並提出 stringInJsonObject 的內容值   
+```
+ String validNestedJsonObjectString = """{"jsonString": "hello", "jsonNumber": 123, "jsonArray": [1, 2, 3, 4, 5, 6], "jsonObject": {"stringInJsonObject": "abc", "numberInJsonObject": 456, "arrayInJsonObject": [7, 8, 9, 1, 2, 3], "objectInJsonObject": {"lastStringField": "cxcxc"}}}""";
+ ```
