@@ -47,3 +47,8 @@ Q5 : 以迴圈的方式，print出一個9*9的九九乘法表
 ## chapter02-5 homework
 Q1 : 有一個家庭，爸爸是李小鴻，媽媽是秉鴻李，兒子是李小秉，請將father、mother、son作為Map的key，並將內容填入   
 Q2 : 接續上一題，家庭後來有了女兒daughter，女兒叫作李小花，請為先前建置的Map，追加一個新的鍵值   
+
+## chapter02-6 homework
+Q1 : 宣告一個Map，鍵值型態分別為String,dynamic有一個鍵叫做 questionId，內容為整數有一個鍵叫做 questionContent，內容為字串   
+Q2 : 將先前建置的 Map 轉換成 json object 格式的字串   
+Q3 : 有一個符合 json object 格式的字串，請嘗試轉換成`Map<String, dynamic>`的資料結構，並成功提取 itemId 欄位   
