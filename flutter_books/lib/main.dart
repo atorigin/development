@@ -1,40 +1,27 @@
 import 'dart:convert';
 
-void main(List<String> args) {
-  // Q1
-  print("Q1 提取出  arrayInJsonObject 的值");
-  String validNestedJsonObjectString = """{"jsonString": "hello", "jsonNumber": 123, "jsonArray": [1, 2, 3, 4, 5, 6], "jsonObject": {"stringInJsonObject": "abc", "numberInJsonObject": 456, "arrayInJsonObject": [7, 8, 9, 1, 2, 3], "objectInJsonObject": {"lastStringField": "cxcxc"}}}""";
-  print("先轉換成 JsonObject 利用 indent 查看整體結構");
-  Map<String,dynamic> mapFromValidNestedJsonObjectString = jsonDecode(validNestedJsonObjectString);
-  print(JsonEncoder.withIndent("    ").convert(mapFromValidNestedJsonObjectString));
-  // 取得結構如下
-  // {
-  //   "jsonString": "hello",
-  //   "jsonNumber": 123,
-  //   "jsonArray": [
-  //       1,
-  //       2,
-  //       3,
-  //       4,
-  //       5,
-  //       6
-  //   ],
-  //   "jsonObject": {
-  //       "stringInJsonObject": "abc",
-  //       "numberInJsonObject": 456,
-  //       "arrayInJsonObject": [
-  //           7,
-  //           8,
-  //           9,
-  //           1,
-  //           2,
-  //           3
-  //       ],
-  //       "objectInJsonObject": {
-  //           "lastStringField": "cxcxc"
-  //       }
-  //   }
-  // }
-  print("打印 Q1 結果\n");
-  print(mapFromValidNestedJsonObjectString["jsonObject"]["arrayInJsonObject"]);
+import 'package:http/http.dart' as http;
+void main(List<String> args) async {
+  // 取得單一 jsonObject 案例
+  Uri uri = Uri.parse("https://jsonplaceholder.typicode.com/users/1");
+  var response = await http.get(uri);
+  print(response.body);
+  
+  Map<String,dynamic> responseMap = jsonDecode(response.body);
+  print(responseMap);
+  
+  print("取出 jsonObject 裡面的 key-value");
+  print(responseMap["phone"]);
+
+  // 取得 jsonArray 案例
+  Uri uri2 = Uri.parse("https://jsonplaceholder.typicode.com/users");
+  var response2 = await http.get(uri2);
+  List<dynamic> response2List = jsonDecode(response2.body);
+  print(response2List[2]);
+
+  // POST 資料到遠端 Server 案例 , 常用於 backend API Service 互動的場景
+  Uri uri3 = Uri.parse("https://jsonplaceholder.typicode.com/posts");
+  String jsonObjectPostBody = """{"name": "atorigin" , "title": "begineer" , "body": "coding is live"}""";
+  var response3 = await http.post(uri3, body: jsonObjectPostBody);
+  print(response3.body);
 }
