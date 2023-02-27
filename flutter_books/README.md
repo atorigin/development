@@ -71,7 +71,7 @@ String validNestedJsonObjectString = """{"jsonString": "hello", "jsonNumber": 12
 ```
 
 ## chapter02-8 homework
-Q1 : 剖析 [](https://jsonplaceholder.typicode.com/posts)，對其使用 get 方法，取回一系列 json array，並取 用第五個 json object 。對其使用 post 方法，取得 json object，傳回其資料編號的 id   
-Q2 : 剖析 [](https://jsonplaceholder.typicode.com/comments)，對其使用 get 方法，取回一系列 json array， 並取用第五個 json object 。對其使用 post 方法，取得 json object，傳回其資料編號的 id   
-Q3 : 剖析 [](https://jsonplaceholder.typicode.com/albums)，對其使用 get 方法，取回一系列 json array，並取 用第五個 json object 。對其使用 post 方法，取得 json object，傳回其資料編號的 id   
-Q4 : 剖析 [](https://jsonplaceholder.typicode.com/todos)，對其使用 get 方法，取回一系列 json array，並取 用第五個 json object 。對其使用 post 方法，取得 json object，傳回其資料編號的 id   
+Q1 : 剖析 [https://jsonplaceholder.typicode.com/posts](https://jsonplaceholder.typicode.com/posts)，對其使用 get 方法，取回一系列 json array，並取 用第五個 json object 。對其使用 post 方法，取得 json object，傳回其資料編號的 id   
+Q2 : 剖析 [https://jsonplaceholder.typicode.com/comments](https://jsonplaceholder.typicode.com/comments)，對其使用 get 方法，取回一系列 json array， 並取用第五個 json object 。對其使用 post 方法，取得 json object，傳回其資料編號的 id   
+Q3 : 剖析 [https://jsonplaceholder.typicode.com/albums](https://jsonplaceholder.typicode.com/albums)，對其使用 get 方法，取回一系列 json array，並取 用第五個 json object 。對其使用 post 方法，取得 json object，傳回其資料編號的 id   
+Q4 : 剖析 [https://jsonplaceholder.typicode.com/todos](https://jsonplaceholder.typicode.com/todos)，對其使用 get 方法，取回一系列 json array，並取 用第五個 json object 。對其使用 post 方法，取得 json object，傳回其資料編號的 id   
