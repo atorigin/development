@@ -1,30 +1,40 @@
 import 'dart:convert';
 
 void main(List<String> args) {
-  print("範例一");
-  String stringOfJsonArray = """[1,2,3,4,5,6]""";
-  List<dynamic> listFromStringOfJsonArray = jsonDecode(stringOfJsonArray);
-  print(listFromStringOfJsonArray);
-
-  print("\n範例二");
-  listFromStringOfJsonArray.add(7);
-  String newStringOfJsonArray = jsonEncode(listFromStringOfJsonArray);
-  print(newStringOfJsonArray);
-
-  print("\n範例三");
-  String stringJsonArrayOfJsonObject = """[{"name": "atorigin" , "age": 18}, {"name": "小菜" , "age": 25}, {"name": "小美", "age": 21}]""";
-  List<dynamic> listFromJsonArrayOfJsonObject = jsonDecode(stringJsonArrayOfJsonObject);
-  print(listFromJsonArrayOfJsonObject[0]["name"]);
-
-  print("\n範例四，以迴圈方式將 Json Object 轉換成 Map");
-  for(Map<String,dynamic> jsonObject in listFromJsonArrayOfJsonObject) {
-    print(jsonObject);
-  }
-
-  print("\n範例五，新增一個 Map 到陣列裡");
-  Map<String,dynamic> fifthSampleMap = {"name": "bob", "age": 40};
-  listFromJsonArrayOfJsonObject.add(fifthSampleMap);
-  for(Map<String,dynamic> jsonObject in listFromJsonArrayOfJsonObject) {
-    print(jsonObject);
-  }
+  // Q1
+  print("Q1 提取出  arrayInJsonObject 的值");
+  String validNestedJsonObjectString = """{"jsonString": "hello", "jsonNumber": 123, "jsonArray": [1, 2, 3, 4, 5, 6], "jsonObject": {"stringInJsonObject": "abc", "numberInJsonObject": 456, "arrayInJsonObject": [7, 8, 9, 1, 2, 3], "objectInJsonObject": {"lastStringField": "cxcxc"}}}""";
+  print("先轉換成 JsonObject 利用 indent 查看整體結構");
+  Map<String,dynamic> mapFromValidNestedJsonObjectString = jsonDecode(validNestedJsonObjectString);
+  print(JsonEncoder.withIndent("    ").convert(mapFromValidNestedJsonObjectString));
+  // 取得結構如下
+  // {
+  //   "jsonString": "hello",
+  //   "jsonNumber": 123,
+  //   "jsonArray": [
+  //       1,
+  //       2,
+  //       3,
+  //       4,
+  //       5,
+  //       6
+  //   ],
+  //   "jsonObject": {
+  //       "stringInJsonObject": "abc",
+  //       "numberInJsonObject": 456,
+  //       "arrayInJsonObject": [
+  //           7,
+  //           8,
+  //           9,
+  //           1,
+  //           2,
+  //           3
+  //       ],
+  //       "objectInJsonObject": {
+  //           "lastStringField": "cxcxc"
+  //       }
+  //   }
+  // }
+  print("打印 Q1 結果\n");
+  print(mapFromValidNestedJsonObjectString["jsonObject"]["arrayInJsonObject"]);
 }
