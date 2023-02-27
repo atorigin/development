@@ -24,8 +24,8 @@ void main(List<String> args) {
   print("打印 Q3 結果 " + mapFromQ3String["itemId"].toString());
   
   // Q4 將一個像 json object 的字串轉成 Map 並提取 stringInJsonObject 的內容值
-   String validNestedJsonObjectString = """{"jsonString": "hello", "jsonNumber": 123, "jsonArray": [1, 2, 3, 4, 5, 6], "jsonObject": {"stringInJsonObject": "abc", "numberInJsonObject": 456, "arrayInJsonObject": [7, 8, 9, 1, 2, 3], "objectInJsonObject": {"lastStringField": "cxcxc"}}}""";
-   Map<String,dynamic> mapFromQ4String = jsonDecode(validNestedJsonObjectString);
-   print("先打印整個 json 查看整個 json 結構 " + JsonEncoder.withIndent("    ").convert(mapFromQ4String));
-   print("打印 Q4 結果 " + mapFromQ4String["jsonObject"]["stringInJsonObject"]);
+  String validNestedJsonObjectString = """{"jsonString": "hello", "jsonNumber": 123, "jsonArray": [1, 2, 3, 4, 5, 6], "jsonObject": {"stringInJsonObject": "abc", "numberInJsonObject": 456, "arrayInJsonObject": [7, 8, 9, 1, 2, 3], "objectInJsonObject": {"lastStringField": "cxcxc"}}}""";
+  Map<String,dynamic> mapFromQ4String = jsonDecode(validNestedJsonObjectString);
+  print("先打印整個 json 查看整個 json 結構 " + JsonEncoder.withIndent("    ").convert(mapFromQ4String));
+  print("打印 Q4 結果 " + mapFromQ4String["jsonObject"]["stringInJsonObject"]);
 }
