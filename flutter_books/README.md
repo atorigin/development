@@ -54,12 +54,12 @@ Q2 : 將先前建置的 Map 轉換成 json object 格式的字串
 Q3 : 有一個符合 json object 格式的字串，請嘗試轉換成`Map<String, dynamic>`的資料結構，並成功提取 itemId 欄位   
 ```
 {
-    "itemId": 303031   
+    "itemId": 303031,   
     "itemName": "白米飯",   
     "itemPrice": 300  
 }
 ```
 Q4 : 有一個複雜巢狀 json string，嘗試解析並提出 stringInJsonObject 的內容值   
 ```
- String validNestedJsonObjectString = """{"jsonString": "hello", "jsonNumber": 123, "jsonArray": [1, 2, 3, 4, 5, 6], "jsonObject": {"stringInJsonObject": "abc", "numberInJsonObject": 456, "arrayInJsonObject": [7, 8, 9, 1, 2, 3], "objectInJsonObject": {"lastStringField": "cxcxc"}}}""";
+String validNestedJsonObjectString = """{"jsonString": "hello", "jsonNumber": 123, "jsonArray": [1, 2, 3, 4, 5, 6], "jsonObject": {"stringInJsonObject": "abc", "numberInJsonObject": 456, "arrayInJsonObject": [7, 8, 9, 1, 2, 3], "objectInJsonObject": {"lastStringField": "cxcxc"}}}""";
  ```
