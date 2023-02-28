@@ -75,3 +75,7 @@ Q1 : 剖析 [https://jsonplaceholder.typicode.com/posts](https://jsonplaceholder
 Q2 : 剖析 [https://jsonplaceholder.typicode.com/comments](https://jsonplaceholder.typicode.com/comments)，對其使用 get 方法，取回一系列 json array， 並取用第五個 json object 。對其使用 post 方法，取得 json object，傳回其資料編號的 id   
 Q3 : 剖析 [https://jsonplaceholder.typicode.com/albums](https://jsonplaceholder.typicode.com/albums)，對其使用 get 方法，取回一系列 json array，並取用第五個 json object 。對其使用 post 方法，取得 json object，傳回其資料編號的 id   
 Q4 : 剖析 [https://jsonplaceholder.typicode.com/todos](https://jsonplaceholder.typicode.com/todos)，對其使用 get 方法，取回一系列 json array，並取用第五個 json object 。對其使用 post 方法，取得 json object，傳回其資料編號的 id   
+
+## chapter02-9 homework
+Q1 : 設計一個主程序，會印出會議開始，中間過程透過 Future.delayed 印出請老何訂購餐點，最後在主程序印出會議結束   
+Q2 : 設計一個主程序，會印出會議開始，中間過程透過 Future.delayed 印出請老何訂購餐點，再透過 Future.microtask 印出請老何定機票，最後在主程序印出會議結束   
