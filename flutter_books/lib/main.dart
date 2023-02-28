@@ -1,16 +1,18 @@
 void main(List<String> args) {
-  print("chapter02-9-homrwork 會議開始");
+  print("小美和小菜對完所有行程");
+  Future.microtask(() {
+    return "吃中餐";
+  }).then((lastTaskEatLaunch) {
+    print(lastTaskEatLaunch);
+    return "訂高鐵票";
+  }).then((lastTaskHighRoadway) {
+    print(lastTaskHighRoadway);
+    return "搭車去高鐵";
+  }).then((lastTaskTakeTaxi) {
+    print(lastTaskTakeTaxi);
+  });
 
-  // Q1
-  Future.delayed(
-    Duration(seconds: 1),
-    () {
-      print("請老何訂購餐點");
-    }
-  );
+  Future.microtask(() { print("小菜寫 flutter"); });
 
-  // Q2
-  Future.microtask(() { print("老何定機票"); });
-  
-  print("chapter02-9-homework 會議結束");
+  print("小菜與小美對完行程，小美生氣了");
 }

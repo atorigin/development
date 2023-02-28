@@ -79,3 +79,7 @@ Q4 : 剖析 [https://jsonplaceholder.typicode.com/todos](https://jsonplaceholder
 ## chapter02-9 homework
 Q1 : 設計一個主程序，會印出會議開始，中間過程透過 Future.delayed 印出請老何訂購餐點，最後在主程序印出會議結束   
 Q2 : 設計一個主程序，會印出會議開始，中間過程透過 Future.delayed 印出請老何訂購餐點，再透過 Future.microtask 印出請老何定機票，最後在主程序印出會議結束   
+
+## chapter02-10 homework
+Q1 : 以 Future 的 microtask 為開頭，串接多個 then 方法，依序印出。為了要做高效能的 APP、我們必須知道異步分工合作、要知道 Dart 的異步分工機制、可以使用 Future、並透過 then 方法、讓分工有順序性   
+Q2 : http 套件的 get 與 post 行為，其實會傳入一個 Future 內進行操作，以 http 套件結合 Future 與 then 的方式，將 https://jsonplaceholder.typicode.com/users/1 的 json 資料爬取下來，並印出 phone 欄位 的內容   
