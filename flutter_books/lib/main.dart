@@ -1,19 +1,16 @@
 void main(List<String> args) {
-  print("會議開始：這是一次特別的任務");
+  print("chapter02-9-homrwork 會議開始");
 
+  // Q1
   Future.delayed(
-    Duration(seconds: 1), 
-    ()
-    {
-      print("小美收到下台中的任務，開始準備行囊");
+    Duration(seconds: 1),
+    () {
+      print("請老何訂購餐點");
     }
   );
 
-  Future.microtask(
-    (){
-      print("atorigin coding with flutter");
-    }
-  );
-
-  print("會議結束");
+  // Q2
+  Future.microtask(() { print("老何定機票"); });
+  
+  print("chapter02-9-homework 會議結束");
 }
