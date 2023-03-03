@@ -1,40 +1,29 @@
-import 'dart:convert';
-
-import 'package:http/http.dart' as http;
 void main(List<String> args) {
-  // Q1
-  Future.microtask(
-    () => "為了要做高效能的App").then(
-      (value) {
-        print(value);
-        return "我們必須知道異步分工合作";
-      }).then((value){
-        print(value);
-        return "要知道 Dart 的異步分工機制";
-      }).then((value) {
-        print(value);
-        return "可以使用 Future";
-      }).then((value) {
-        print(value);
-        return "並透過 then 方法";
-      }).then((value) {
-        print(value);
-        return "讓分工有順序性";
-      }).then((value) {
-        print(value); 
-      });
+  print("小美與小菜準備對行程");
 
-  // Q2
-  Uri url = Uri.parse("https://jsonplaceholder.typicode.com/users/1");
-  Future.microtask(
-    () {
-      return http.get(url);
-    }).then((value) {
-      print("取出 json object 的 string 轉換成 map");
-      return jsonDecode(value.body);
-    }).then((value) {
-      print("利用 Map 資料結構特性，取出 key 為 phone 的 value 並打印");
-      print(value["phone"]);
-    });
+  xiaoMeiSchedule();
 
+  Future.microtask(() {
+    print("小菜練習 Flutter");
+  });
+
+  print("小美與小菜對完行程，小美生氣了");
+}
+
+void xiaoMeiSchedule() async {
+  String lastTask = await Future.microtask(() {
+    return "小美吃中餐";
+  });
+
+  if(lastTask == "小美吃中餐") {
+    print(lastTask);
+    lastTask = "小美訂高鐵票"; 
+  }
+
+  if(lastTask == "小美訂高鐵票") {
+    print(lastTask);
+    lastTask = "小美搭車去高鐵";
+  }
+
+  print(lastTask);
 }
