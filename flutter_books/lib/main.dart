@@ -11,6 +11,7 @@ void main(List<String> args) {
 }
 
 void xiaoMeiSchedule() async {
+  // 這邊會等到 lastTask 真的因為 Future.microtask 返回 "小美吃中餐" 才開始下一步
   String lastTask = await Future.microtask(() {
     return "小美吃中餐";
   });
