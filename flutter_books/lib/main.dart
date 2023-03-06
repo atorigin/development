@@ -1,30 +1,33 @@
-void main(List<String> args) {
-  print("小美與小菜準備對行程");
+import 'dart:convert';
 
-  xiaoMeiSchedule();
-
+import 'package:http/http.dart' as http;
+void main(List<String> args) async {
+  // Q1
   Future.microtask(() {
-    print("小菜練習 Flutter");
+    return "為了要做高效能的 APP";
+  }).then((value) {
+    print(value);
+    return "我們必須知道異步分工合作";
+  }).then((value) {
+    print(value);
+    return "要知道 Dart 的異步分工機制";
+  }).then((value) {
+    print(value);
+    return "透過建立一個新函數";
+  }).then((value) {
+    print(value);
+    return "並使用 async 與 await";
+  }).then((value) {
+    print(value);
+    print("讓分工有順序性");
   });
 
-  print("小美與小菜對完行程，小美生氣了");
-}
-
-void xiaoMeiSchedule() async {
-  // 這邊會等到 lastTask 真的因為 Future.microtask 返回 "小美吃中餐" 才開始下一步
-  String lastTask = await Future.microtask(() {
-    return "小美吃中餐";
-  });
-
-  if(lastTask == "小美吃中餐") {
-    print(lastTask);
-    lastTask = "小美訂高鐵票"; 
-  }
-
-  if(lastTask == "小美訂高鐵票") {
-    print(lastTask);
-    lastTask = "小美搭車去高鐵";
-  }
-
-  print(lastTask);
+  // Q2
+  Uri url = Uri.parse("https://jsonplaceholder.typicode.com/users/1");
+  // 取得 user 的 json object string
+  var user = await http.get(url);
+  // 轉換 json object string 成 map 資料結構
+  Map<String,dynamic> userMap = jsonDecode(user.body);
+  // 打印結果
+  print(userMap["phone"]);
 }

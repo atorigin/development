@@ -85,5 +85,5 @@ Q1 : 以 Future 的 microtask 為開頭，串接多個 then 方法，依序印�
 Q2 : http 套件的 get 與 post 行為，其實會傳入一個 Future 內進行操作，以 http 套件結合 Future 與 then 的方式，將 https://jsonplaceholder.typicode.com/users/1 的 json 資料爬取下來，並印出 phone 欄位 的內容   
 
 ## chapter02-11 homework
-Q1 : 以 Future 的 microtask 為開頭，串接多個 then 方法，依序印出 為了要做高效能的 APP、我們必須知道異步分工合作、要知道 Dart 的異步分工機制、透過建立一個新函數，並使用 async 與 await、讓分工有順序性   
+Q1 : 以 Future 的 microtask 為開頭，串接多個 then 方法，依序印出為了要做高效能的 APP、我們必須知道異步分工合作、要知道 Dart 的異步分工機制、透過建立一個新函數，並使用 async 與 await、讓分工有順序性   
 Q2 : http 套件的 get 與 post 行為，其實會傳入一個 Future 內進行操作，重建立一個 async 函數，在裡面以 http 套件結合 Future 與 await 的方式，將 https://jsonplaceholder.typicode.com/users/1 的 json 資 料爬取下來，並印出 phone 欄位的內容   
