@@ -91,6 +91,6 @@ Q2 : http 套件的 get 與 post 行為，其實會傳入一個 Future 內進行
 ## chapter02-12 homework
 Q0 : 將範例重新切割成多函數的方式，並搭配 async/await，讓程式碼看起來更簡潔一些   
 Q1 : 剖析 https://jsonplaceholder.typicode.com/posts，對其使用 get 方法，取回一系列 json array，並取用第五個 json object。對其使用 post 方法，取得 json object 傳回資料的編號 id   
-Q2 : 剖析 https://jsonplaceholder.typicode.com/comments，對其使用 get 方法，取回一系列 json array，並取用第五個 json object。對其使用 post 方法，取得 json object 傳回資料的編號 id
-Q3 : 剖析 https://jsonplaceholder.typicode.com/albums，對其使用 get 方法，取回一系列 json array，並取用第五個 json object。對其使用 post 方法，取得 json object 傳回資料的編號 id
-Q3 : 剖析 https://jsonplaceholder.typicode.com/todos，對其使用 get 方法，取回一系列 json array，並取用第五個 json object。對其使用 post 方法，取得 json object 傳回資料的編號 id
+Q2 : 剖析 https://jsonplaceholder.typicode.com/comments，對其使用 get 方法，取回一系列 json array，並取用第五個 json object。對其使用 post 方法，取得 json object 傳回資料的編號 id   
+Q3 : 剖析 https://jsonplaceholder.typicode.com/albums，對其使用 get 方法，取回一系列 json array，並取用第五個 json object。對其使用 post 方法，取得 json object 傳回資料的編號 id   
+Q3 : 剖析 https://jsonplaceholder.typicode.com/todos，對其使用 get 方法，取回一系列 json array，並取用第五個 json object。對其使用 post 方法，取得 json object 傳回資料的編號 id   
