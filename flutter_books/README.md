@@ -87,3 +87,10 @@ Q2 : http 套件的 get 與 post 行為，其實會傳入一個 Future 內進行
 ## chapter02-11 homework
 Q1 : 以 Future 的 microtask 為開頭，串接多個 then 方法，依序印出為了要做高效能的 APP、我們必須知道異步分工合作、要知道 Dart 的異步分工機制、透過建立一個新函數，並使用 async 與 await、讓分工有順序性   
 Q2 : http 套件的 get 與 post 行為，其實會傳入一個 Future 內進行操作，重建立一個 async 函數，在裡面以 http 套件結合 Future 與 await 的方式，將 https://jsonplaceholder.typicode.com/users/1 的 json 資 料爬取下來，並印出 phone 欄位的內容   
+
+## chapter02-12 homework
+Q0 : 將範例重新切割成多函數的方式，並搭配 async/await，讓程式碼看起來更簡潔一些   
+Q1 : 剖析 https://jsonplaceholder.typicode.com/posts，對其使用 get 方法，取回一系列 json array，並取用第五個 json object。對其使用 post 方法，取得 json object 傳回資料的編號 id   
+Q2 : 剖析 https://jsonplaceholder.typicode.com/comments，對其使用 get 方法，取回一系列 json array，並取用第五個 json object。對其使用 post 方法，取得 json object 傳回資料的編號 id
+Q3 : 剖析 https://jsonplaceholder.typicode.com/albums，對其使用 get 方法，取回一系列 json array，並取用第五個 json object。對其使用 post 方法，取得 json object 傳回資料的編號 id
+Q3 : 剖析 https://jsonplaceholder.typicode.com/todos，對其使用 get 方法，取回一系列 json array，並取用第五個 json object。對其使用 post 方法，取得 json object 傳回資料的編號 id

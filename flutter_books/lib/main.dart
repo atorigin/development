@@ -1,33 +1,40 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-void main(List<String> args) async {
-  // Q1
-  Future.microtask(() {
-    return "為了要做高效能的 APP";
-  }).then((value) {
-    print(value);
-    return "我們必須知道異步分工合作";
-  }).then((value) {
-    print(value);
-    return "要知道 Dart 的異步分工機制";
-  }).then((value) {
-    print(value);
-    return "透過建立一個新函數";
-  }).then((value) {
-    print(value);
-    return "並使用 async 與 await";
-  }).then((value) {
-    print(value);
-    print("讓分工有順序性");
-  });
+// 寫一個 getRemoteSystemData 的 function
+Future<List<dynamic>> getRemoteSystemData(String remoteUrl) async {
+  Uri url = Uri.parse(remoteUrl);
+  http.Response multipleResponse = await http.get(url);
+  List<dynamic> jsonArrayFromRemote = jsonDecode(multipleResponse.body);
+  return jsonArrayFromRemote;
+}
 
-  // Q2
-  Uri url = Uri.parse("https://jsonplaceholder.typicode.com/users/1");
-  // 取得 user 的 json object string
-  var user = await http.get(url);
-  // 轉換 json object string 成 map 資料結構
-  Map<String,dynamic> userMap = jsonDecode(user.body);
-  // 打印結果
-  print(userMap["phone"]);
+// 寫一個 getRemoteSystemDataWithoutAsync
+Future<List<dynamic>> getRemoteSystemDataWithoutAsync(String remoteUrl) {
+  Uri url = Uri.parse(remoteUrl);
+  Future<http.Response> multipleResponseWithFuture = http.get(url);
+  Future<List<dynamic>> jsonArrayFromRemoteWithFuture = multipleResponseWithFuture.then((responses) => jsonDecode(responses.body));
+  return jsonArrayFromRemoteWithFuture;
+}
+
+// main 方法，使用 getRemoteSystemData 的 function 和 getRemoteSystemDataWithoutAsync 的 function 各操作一次
+void main(List<String> args) async {
+  // 利用第一個 Function 取得資料並抓取對應欄位
+  // 要調用 await 的話 , 該 function 必定要是一個 async function , 因此 main 需宣告為 async
+  List<dynamic> f1 = await getRemoteSystemData("https://jsonplaceholder.typicode.com/users");
+  print(JsonEncoder.withIndent("    ").convert(f1[0]));
+  print(f1[0]["username"]);
+  print(f1[0]["email"]);
+  // 如何避免 null
+  print(f1[0]["family"]);
+
+  print("==========分隔線==========");
+
+  // 同上，但用第二個 Function 展示
+  List<dynamic> f2 = await getRemoteSystemDataWithoutAsync("https://jsonplaceholder.typicode.com/users");
+  print(JsonEncoder.withIndent("    ").convert(f2[0]));
+  print(f2[0]["username"]);
+  print(f2[0]["email"]);
+  // 同上 , 如何避免 null
+  print(f2[0]["family"]);
 }
