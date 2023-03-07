@@ -94,3 +94,9 @@ Q1 : 剖析 https://jsonplaceholder.typicode.com/posts，對其使用 get 方法
 Q2 : 剖析 https://jsonplaceholder.typicode.com/comments，對其使用 get 方法，取回一系列 json array，並取用第五個 json object。對其使用 post 方法，取得 json object 傳回資料的編號 id   
 Q3 : 剖析 https://jsonplaceholder.typicode.com/albums，對其使用 get 方法，取回一系列 json array，並取用第五個 json object。對其使用 post 方法，取得 json object 傳回資料的編號 id   
 Q3 : 剖析 https://jsonplaceholder.typicode.com/todos，對其使用 get 方法，取回一系列 json array，並取用第五個 json object。對其使用 post 方法，取得 json object 傳回資料的編號 id   
+
+## chapter02-13 homework
+Q1 : 建立一個 Cat 類別，裡面有字串型別的 variety (品種屬性)，數字型別的 weight(重量屬性)，一個 echo 函數，使用時會印出喵   
+Q2 : 建立一個 Dog 類別，裡面有字串型別的 variety (品種屬性)，數字型別的 weight(重量屬性)，一個 echo 函數，使用時會印出汪   
+Q3 : 建立一個 Human 類別，裡面有字串型別的 variety (品種屬性)，數字型別的 weight(重量屬性)，一個 echo 函數，使用時會印出HI   
+Q4 : 建立一個 Rabbit 類別，裡面有字串型別的 variety (品種屬性)，數字型別的 weight(重量屬性)，一個 echo 函數，使用時會印出咕咕，一個 score 函數，評鑑 weight 重量屬性，超過 20 時，傳回文字胖，低於或等於 20 時，傳回文字普通   

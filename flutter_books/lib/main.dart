@@ -1,25 +1,19 @@
-import 'dart:convert';
+class User {
+  int id;
+  String name;
+  String username;
+  String email;
 
-import 'package:http/http.dart' as http;
+  User(this.id, this.name, this.username, this.email);
 
-Future<Map<String,dynamic>> getRemoteSystemDataTheObject(String remoteUrl, int count) async {
-  Uri url = Uri.parse(remoteUrl);
-  List<dynamic> jsonArrayFromRemote = jsonDecode((await http.get(url)).body);
-  Map<String, dynamic> jsonObjectFromRemote = jsonArrayFromRemote[count];
-  return jsonObjectFromRemote;
+  void printUserInfo(){
+    print("用戶名稱 $name ; 該用戶帳號為 $username , 用戶 id 為 $id , 用戶信箱為 $email");
+  }
+
 }
-void main(List<String> args) async {
-  // Q1 https://jsonplaceholder.typicode.com/posts
-  Map<String, dynamic> question1Object = await getRemoteSystemDataTheObject("https://jsonplaceholder.typicode.com/posts", 4);
-  print(question1Object["id"]);
-  // Q2 https://jsonplaceholder.typicode.com/comments
-  Map<String, dynamic> question2Object = await getRemoteSystemDataTheObject("https://jsonplaceholder.typicode.com/comments", 4);
-  print(question2Object["id"]);
-  // Q3 https://jsonplaceholder.typicode.com/albums
-  Map<String, dynamic> question3Object = await getRemoteSystemDataTheObject("https://jsonplaceholder.typicode.com/albums", 4);
-  print(question3Object["id"]);
-  // Q4 https://jsonplaceholder.typicode.com/todos
-  Map<String, dynamic> question4Object = await getRemoteSystemDataTheObject("https://jsonplaceholder.typicode.com/todos", 4);
-  print(question4Object["id"]);
-
+void main(List<String> args) {
+  User user1 = User(1, "demo", 'demo-user', 'demo@mail.com');
+  user1.printUserInfo();
+  User user2 = User(2, "atorigin", 'atorigin', 'atorigin@mail.com');
+  user2.printUserInfo();
 }
