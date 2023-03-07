@@ -1,19 +1,56 @@
-class User {
-  int id;
-  String name;
-  String username;
-  String email;
+class Cat {
+  String variety;
+  int weight;
 
-  User(this.id, this.name, this.username, this.email);
+  // constructor
+  Cat(this.variety, this.weight);
 
-  void printUserInfo(){
-    print("用戶名稱 $name ; 該用戶帳號為 $username , 用戶 id 為 $id , 用戶信箱為 $email");
+  void echo() {
+    print("喵");
+  }
+}
+
+class Dog {
+  String variety;
+  int weight;
+  
+  // constructor
+  Dog(this.variety, this.weight);
+  
+  void echo() {
+    print("汪");
+  }
+}
+
+class Human {
+  String variety;
+  int weight;
+
+  // constructor
+  Human(this.variety, this.weight);
+
+  void echo() {
+    print("Hi");
+  }
+}
+
+class Rabbit {
+  String variety;
+  int weight;
+
+  // constructor
+  Rabbit(this.variety, this.weight);
+
+  void echo() {
+    print("咕咕");
   }
 
-}
-void main(List<String> args) {
-  User user1 = User(1, "demo", 'demo-user', 'demo@mail.com');
-  user1.printUserInfo();
-  User user2 = User(2, "atorigin", 'atorigin', 'atorigin@mail.com');
-  user2.printUserInfo();
+  void score() {
+    if(this.weight > 20) {
+      print("胖");
+    }
+    else if(this.weight <= 20) {
+      print("普通");
+    }
+  }
 }
