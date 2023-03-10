@@ -1,69 +1,89 @@
-// 建立一個 User Class
-// 其特型為，一個 id 編號，姓名，一個帳號用戶名，一個 email
-// 該類別有 fromJson 建構子，有 toJson 方法，還有一個 printUserInfo 用來打印該用戶相關訊息
-
 import 'dart:convert';
 
-class User {
-  int id;
-  String name;
-  String username;
-  String email;
+class Cat {
+  String variety;
+  int weight;
 
-  // 第一建構子
-  User(this.id, this.name, this.username, this.email);
+  Cat(this.variety, this.weight);
 
-  // 第二建構子
-  factory User.fromJson(dynamic userJson) {
-    int userId = userJson["id"];
-    String name = userJson["name"];
-    String username = userJson["username"];
-    String email = userJson["email"];
-    return User(userId, name, username, email);
+  factory Cat.fromJson(dynamic catJson) {
+    String variety = catJson["variety"];
+    int weight = catJson["weight"];
+    return Cat(variety, weight);
   }
 
-  void printUserInfo() {
-    print("用戶叫做 $name, 用戶的帳號為 $username, 用戶的id是 $id, 用戶的信箱為 $email");
+  void echo() {
+    print("喵");
   }
 
   String toJson() {
-    dynamic instanceMap = {"id": id, "name": name, "username": username, "email": email};
-    return jsonEncode(instanceMap);
+    dynamic instance = {"variety": variety, "weight": weight};
+    return jsonEncode(instance);
+  }
+}
+
+class Dog {
+  String variety;
+  int weight;
+  
+  Dog(this.variety, this.weight);
+
+  factory Dog.fromJson(dynamic dogJson) {
+    String variety = dogJson["variety"];
+    int weight = dogJson["weight"];
+    return Dog(variety, weight);
+  }
+
+  void echo() {
+    print("汪");
+  }
+
+  String toJson() {
+    dynamic instance = {"variety": variety, "weight": weight};
+    return jsonEncode(instance);
+  }
+}
+
+class Human {
+  String variety;
+  int weight;
+
+  Human(this.variety, this.weight);
+
+  factory Human.fromJson(dynamic humanJson) {
+    String variety = humanJson["variety"];
+    int weight = humanJson["weight"];
+    return Human(variety, weight);
+  }
+
+  void echo() {
+    print("Hello");
+  }
+
+  String toJson() {
+    dynamic instance = {"variety": variety, "weight": weight};
+    return jsonEncode(instance);
   }
 }
 
 void main(List<String> args) {
-  print("=====Section1=====");
-  // 生成一個 User 物件
-  User demoUser = User(1, "atorigin", "at-origin", 'atorigin@example.com');
-  print("demoUser id = ${demoUser.id}");
-  print("demoUser name = ${demoUser.name}");
-  print("demoUser username = ${demoUser.username}");
-  print("demoUser email = ${demoUser.email}");
-  demoUser.printUserInfo();
-  print("toJson 結果為: " + demoUser.toJson());
+  // 生成 Cat 物件
+  Cat myCat = Cat("加菲貓", 30);
+  myCat.echo();
+  print(myCat.toJson());
 
-  print("=====Section2=====");
-  // 透過 String 轉換成 User 物件
-  String userJsonString = """{"id": 2, "name": "小菜", "username": "xiao-tsai", "email": "xiao-tsai@example.com"}""";
-  // 需要先透過 jsonDecode 將其轉成對應的資料結構，否則將出錯（當然字串也必須符合 json object 結構）
-  dynamic userJsonStringToDynamic = jsonDecode(userJsonString);
-  User demoUser2 = User.fromJson(userJsonStringToDynamic);
-  print("demoUser2 id = ${demoUser2.id}");
-  print("demoUser2 name = ${demoUser.name}");
-  print("demoUser2 username = ${demoUser2.username}");
-  print("demoUser2 email = ${demoUser2.email}");
-  demoUser2.printUserInfo();
+  // 生成 Dog 物件
+  Dog myDog = Dog("柴犬", 28);
+  myDog.echo();
+  print(myDog.toJson());
 
-  print("=====Section3=====");
-  // 透過用戶物件轉換成 String，再利用 String 將其轉回 User 物件
-  String demoUser3 = demoUser.toJson();
-  print(demoUser3);
-  dynamic user3StringToDynamic = jsonDecode(demoUser3);
-  User demoUser4 = User.fromJson(user3StringToDynamic);
-  print(demoUser4.id);
-  print(demoUser4.name);
-  print(demoUser4.username);
-  print(demoUser4.email);
-  demoUser4.printUserInfo();
+  // 生成 Human 物件
+  Human me = Human("男性", 70);
+  me.echo();
+  print(me.toJson());
+
+  String anotherCat = """{"variety": "黑貓", "weight": 15}""";
+  Cat cat2 = Cat.fromJson(jsonDecode(anotherCat));
+  cat2.echo();
+  print(cat2.toJson().runtimeType);
 }
