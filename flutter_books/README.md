@@ -105,3 +105,9 @@ Q4 : 建立一個 Rabbit 類別，裡面有字串型別的 variety (品種屬性
 Q1 : 建立一個 Cat 類別，裡面有字串型別的 variety (品種屬性)，數字型別的 weight(重量屬性)，一個 echo 函數，使用時會印出喵。並設計一個第二建構子 fromJson()，能接收 dynamic 的 json 資料去生成 Cat 物件，並設計一個 toJson()，能將 Cat 物件，轉換回 String 型別的 json 資料   
 Q2 : 建立一個 Dog 類別，裡面有字串型別的 variety (品種屬性)，數字型別的 weight(重量屬 性)，一個 echo 函數，使用時會印出汪。並設計一個第二建構子 fromJson()，能接收 dynamic 的 json 資料去生成 Dog 物件，並設計一個 toJson()，能將 Dog 物件，轉換回 String 型別的 json 資料   
 Q3 : 建立一個 Human 類別，裡面有字串型別的 variety (品種屬性)，數字型別的 weight(重量屬 性)，一個 echo 函數，使用時會印出雲育鏈。並設計一個第二建構子 fromJson()，能接收 dynamic 的 json 資料去生成 Human 物件，並設計一個 toJson()，能將 Human 物件，轉換回 String 型別的 json 資料   
+
+## chapter02-15 homework
+Q1 : 剖析 [https://jsonplaceholder.typicode.com/posts](https://jsonplaceholder.typicode.com/posts)，並定義 Post 類別，設計 toJson 與 fromJson 方法，從外部系統取回一系列 json array 時，能夠轉換成 List<Post>，並取用第五個 Post object。 再將該 Post object，轉換回 json 後，作為 http 的 post 方法內容送出   
+Q2 : 剖析 [https://jsonplaceholder.typicode.com/comments](https://jsonplaceholder.typicode.com/comments)，並定義 Comment 類別，設計 toJson 與 fromJson 方法，從外部系統取回一系列 json array 時，能夠轉換成 List<Comment>，並取用第五個 Comment object 。 再將該 Comment object，轉換回 json 後，作為 http 的 post 方法內容送出   
+Q3 : 剖析 [https://jsonplaceholder.typicode.com/albums](https://jsonplaceholder.typicode.com/albums)，並定義 Album 類別，設計 toJson 與 fromJson 方 法，從外部系統取回一系列 json array 時，能夠轉換成 List<Album>，並取用第五個 Album object。 再將該 Album object，轉換回 json 後，作為 http 的 post 方法內容送出   
+Q4 : 剖析 [https://jsonplaceholder.typicode.com/todos](https://jsonplaceholder.typicode.com/todos)，並定義 Todo 類別，設計 toJson 與 fromJson 方 法，從外部系統取回一系列 json array 時，能夠轉換成 List<Todo>，並取用第五個 Todo object 。 再 將該 Todo object，轉換回 json 後，作為 http 的 post 方法內容送出   
