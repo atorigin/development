@@ -111,3 +111,7 @@ Q1 : 剖析 [https://jsonplaceholder.typicode.com/posts](https://jsonplaceholder
 Q2 : 剖析 [https://jsonplaceholder.typicode.com/comments](https://jsonplaceholder.typicode.com/comments)，並定義 Comment 類別，設計 toJson 與 fromJson 方法，從外部系統取回一系列 json array 時，能夠轉換成 List<Comment>，並取用第五個 Comment object 。 再將該 Comment object，轉換回 json 後，作為 http 的 post 方法內容送出   
 Q3 : 剖析 [https://jsonplaceholder.typicode.com/albums](https://jsonplaceholder.typicode.com/albums)，並定義 Album 類別，設計 toJson 與 fromJson 方 法，從外部系統取回一系列 json array 時，能夠轉換成 List<Album>，並取用第五個 Album object。 再將該 Album object，轉換回 json 後，作為 http 的 post 方法內容送出   
 Q4 : 剖析 [https://jsonplaceholder.typicode.com/todos](https://jsonplaceholder.typicode.com/todos)，並定義 Todo 類別，設計 toJson 與 fromJson 方 法，從外部系統取回一系列 json array 時，能夠轉換成 List<Todo>，並取用第五個 Todo object 。 再 將該 Todo object，轉換回 json 後，作為 http 的 post 方法內容送出   
+
+## chapter02-16 homework
+Q1 : 定義一個 Animal 抽象類別，有一個字串基礎屬性為姓名，另外有一個未實踐的 echo 函數。另外設置一個 Dog 類別，繼承 Animal 類別，調度 echo 函數時，必須印出 「汪」; 另外設置一個 Cat 類別，繼承 Animal 類別，調度 echo 函數時，必須印出「喵」   
+Q2 : 定義一個 Human 抽象類別，有一個字串基礎屬性為姓名，另外有一個未實踐的 echo 函數。另外設置一個 Asian 類別，繼承 Human 類別，調度 echo 函數時，必須印出 「你好」; 另外設置一個 European 類別，繼承 Human 類別，調度 echo 函數時，必須印出 「Hello」   
