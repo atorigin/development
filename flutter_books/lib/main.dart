@@ -1,59 +1,64 @@
-// 建立一個抽象類別 Drinking
-// 建立一個 Coffee 類別繼承 Drinking
-// 建立一個 Tea 類別繼承 Drinking
-// 個別實現 Drinking 抽象類別的未實作 method
+abstract class Animal {
+  String name;
 
+  Animal(this.name);
 
-abstract class Drinking {
-  // 產地
-  String origin;
-  // 品牌推廣
-  String branding;
-  // 價格
-  int price;
-
-  Drinking(this.origin, this.branding, this.price);
-
-  // 第一個 method - 產品須知
-  void mustKnow() {
-    print("產品若有瑕疵，可聯絡消基會");
-  }
-
-  // 第二個 method - 產品說明 (未真正 implement)
-  void drinkingInstruction() {}
+  void echo() {}
 }
 
-class Coffee extends Drinking {
-  Coffee(String origin, String branding, int price) : super(origin, branding, price);
+class Dog extends Animal {
+  Dog(String name) : super(name);
 
   @override
-  void drinkingInstruction() {
-    print("半夜後不要喝咖啡，避免無法入睡");
+  void echo() {
+    print("汪!");
   }
 }
 
-class Tea extends Drinking {
-  Tea(String origin, String branding, int price) : super(origin, branding, price);
+class Cat extends Animal {
+  Cat(String name) : super(name);
+
+  @override
+  void echo() {
+    print("喵~");
+  }
+}
+
+abstract class Human {
+  String name;
   
-  @override
-  void mustKnow() {
-    print("喝好茶，醒神延年益壽");
-  }
+  Human(this.name);
+
+  void echo() {}
+}
+
+class Asian extends Human {
+  Asian(String name) : super(name);
 
   @override
-  void drinkingInstruction() {
-    print("可熱沖或冷泡");
+  void echo() {
+    print("你好~");
+  }
+}
+
+class European extends Human {
+  European(String name) : super(name);
+
+  @override
+  void echo() {
+    print("Hello!");
   }
 }
 
 void main(List<String> args) {
-  Drinking myCoffee = Coffee("America", "StarBucks", 130);
-  print(myCoffee.branding);
-  myCoffee.drinkingInstruction();
-  myCoffee.mustKnow();
+  Animal blackCat = Cat("小黑");
+  Animal whiteDog = Dog("小柴");
 
-  Drinking myTea = Tea("Taiwan", "wulong", 90);
-  print(myTea.branding);
-  myTea.drinkingInstruction();
-  myTea.mustKnow();
+  blackCat.echo();
+  whiteDog.echo();
+
+  Human xiaoTsai = Asian("小菜");
+  xiaoTsai.echo();
+  Human teddy = European("泰迪");
+  teddy.echo();
 }
